@@ -14,12 +14,7 @@ function perfectNumbers(){
         }
         if (i == sum) {
             console.log("Mikemmel sayı: "+i);
-        }
-        
+        }      
     }
-    
-
-
-    
 }
 perfectNumbers();
