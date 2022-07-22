@@ -4,17 +4,22 @@
 // 1000'e kadarki tüm mükemmel sayıları listeleyen programı yazınız.
 
 function perfectNumbers(){
-    let numbers=[];
-    let sum = 0;
-    for (let i = 1; i < 10; i++) {
+    
+    for (let i = 1; i < 1000; i++) {
+        let sum = 0;
         for (let j = 1; j < i; j++) {
             if(i%j==0){
-                sum += j;
+                sum = sum+j;
             }
         }
+        if (i == sum) {
+            console.log("Mikemmel sayı: "+i);
+        }
+        
     }
-    if (i = sum) {
-        console.log(i + " : Perfect Number!")
-    }
+    
+
+
+    
 }
 perfectNumbers();
