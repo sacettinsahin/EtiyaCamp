@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function Customer(first, last, city, country, age) {
+            this.first = first;
+            this.last = last;
+            this.city = city;
+            this.age = age;
+            this.country = country;
+        }
+
+        var someCustomer = new Customer("Engin", "Demiroğ", "Ankara", "Turkey", 30);
+
+        Customer.prototype.eMail = "engin@goliq.net";
+        Customer.prototype.fullName = function () {
+            return this.first + " " + this.last
+        };
+
+        alert(someCustomer.eMail);
+        alert(someCustomer.fullName());
+
+        //-------------------------------------------
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        yusuf.gozRengi = "Siyah";
+        alert(yusuf.gozRengi);   // Siyah
+        alert(mehmet.gozRengi);  // ???
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        yusuf.adiSoyadi = function () {
+            return this.adi + " " + this.soyAdi;
+        };
+        alert(yusuf.adiSoyadi());   // Yusuf Sefa
+        alert(mehmet.adiSoyadi());  // undefined
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        Kisi.gozRengi = "Siyah";
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.gozRengi);  // undefined
+        alert(yusuf.gozRengi);   // undefined
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+            this.gozRengi = "Siyah";
+        }
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.gozRengi);  // Siyah
+        alert(yusuf.gozRengi);   // Siyah
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        Kisi.adiSoyadi = function () { return this.adi + " " + this.soyAdi; };
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.adiSoyadi());  // undefined
+        alert(yusuf.adiSoyadi());   // undefined
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+            this.adiSoyadi = function () {
+                return this.adi + " " + this.soyAdi;
+            }
+        }
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.adiSoyadi());  // Mehmet SEZER
+        alert(yusuf.adiSoyadi());   // Yusuf Sefa SEZER
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        Kisi.prototype.gozRengi = "Siyah";
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.gozRengi);  // Siyah
+        alert(yusuf.gozRengi);   // Siyah
+
+        //------------------------------------------
+
+        function Kisi(a, s, y) {
+            this.adi = a;
+            this.soyAdi = s;
+            this.yas = y;
+        }
+        Kisi.prototype.adiSoyadi = function () { return this.adi + " " + this.soyAdi; };
+        var mehmet = new Kisi("Mehmet", "SEZER", 45);
+        var yusuf = new Kisi("Yusuf Sefa", "SEZER", 75);
+        alert(mehmet.adiSoyadi());  // Mehmet SEZER
+        alert(yusuf.adiSoyadi());   // Yusuf Sefa SEZER
+
+
+    </script>
+</body>
+
+</html>

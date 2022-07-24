@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function sendEmail(personInterface) {
+            var to = personInterface.eMail;
+            var name = personInterface.name;
+
+            var send = function(){
+                alert("Mail sent to: " + name + "/" + to);
+            }
+            send();
+        }
+        function Customer(name,eMail){
+            this.name=name;
+            this.eMail=eMail;
+            //other staff
+        }
+        function Employee(name,eMail){
+            this.name=name;
+            this.eMail=eMail;
+            //other staff
+        }
+        var someCustomer=new Customer("engin","engin@goliq.net");
+        var someEmployee=new Employee("salih","salih@goliq.net");
+        sendEmail(someCustomer);
+        sendEmail(someEmployee);
+    </script>
+</body>
+
+</html>

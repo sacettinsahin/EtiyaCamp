@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        function Student(favoriteCourse) {
+            this.favoriteCourse = favoriteCourse;
+        }
+
+        Student.prototype = new Person("Engin", "Demiroğ");
+        var engin = new Student("Programming");
+
+        alert(engin.firstName + " " + engin.lastName + " " + engin.favoriteCourse);
+
+
+        /////////////////////////////////////////////////////////////////
+
+        function Hayvan() {
+            this.renk = ["Siyah", "Beyaz", "Sarı"];
+        }
+        Hayvan.prototype.rengiNe = function () {
+            return this.renk;
+        }
+        function Kedi() {
+            this.ad = "Boncuk";
+        }
+
+        Kedi.prototype = new Hayvan();  // Prototype chaining - Prototip zinciri
+
+        var vKedi = new Kedi();
+        console.log(vKedi.ad);          // Boncuk
+        console.log(vKedi.rengiNe());   // Siyah, Beyaz, Sarı
+
+        /////////////////////////////////////////////////////////////////
+
+
+
+    </script>
+</body>
+
+</html>

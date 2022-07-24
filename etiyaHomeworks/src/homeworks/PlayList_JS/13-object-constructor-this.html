@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //this is a function inside an object
+        var student = {
+            firstName:"Engin",
+            lastName:"Demiroğ",
+            fullName: function(){
+                return this.firstName+" "+this.lastName;
+            }
+        }
+        alert(student.fullName());
+
+        //Object Constructor
+        //this is an object - //PascalCase
+        function Customer(first,last,city,country,age){
+            this.first = first;
+            this.last = last;
+            this.city = city;
+            this.age = age;
+            this.country = country;
+        }
+
+        var someCustomer = new Customer("Engin", "Demiroğ","Ankara", "Turkey", 30);
+        alert(someCustomer.country);
+
+        function Something(name,surname,age){
+            this.x=name;
+            this.y=surname;
+            this.z=age;
+        }
+        let something = new Something("Sacettin","Şahin",26);
+        alert(something.x + "-" + something.y + "-" + something.z);
+
+    </script>
+</body>
+</html>

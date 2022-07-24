@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .intro1{
+            background-color: red;
+        }
+        .intro2{
+            background-color: violet;
+        }
+        .intro3{
+            background-color: blue;
+        }
+    </style>
+<body>
+    <p class="intro1" id="intro1">My first paragraph...</p>
+    <p class="intro2" id="intro2">My second paragraph...</p>
+    <p class="intro3" id="intro3">My third paragraph...</p>
+
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+
+    <p id="message"></p>
+    <input type="text" name="customerName" value="Sacettin ŞAHİN">
+
+    <h1>Try it</h1>
+    <h1 id="tryIt">Try it</h1>
+
+    <p id="nodes">Node Value</p>
+
+    <div class="div1">
+        <p id="p1">This is p1</p>
+        <p id="p2">This is p2</p>
+    </div>
+
+    <script>
+        //getElementByID
+        // alert("Reading with getElementById")
+        // var firstParagraph = document.getElementById("intro1");
+        // var message = document.getElementById("message");
+        // message.innerHTML = "Message: "+firstParagraph.innerHTML;
+
+
+        //getElementsByTagName
+        // var allUnorderedLists = document.getElementsByTagName("ul");
+        // var unorderedList = allUnorderedLists[0];
+        // var allListItems = unorderedList.getElementsByTagName("li");
+        // for (let i = 0; i < allListItems.length; i++) {
+        //     alert(allListItems[i].firstChild.data);
+        // }
+
+
+        //getElementsByClassName
+        // var allItemsWithClassName = document.getElementsByClassName("intro1");
+        // alert(allItemsWithClassName[0].innerHTML);
+
+
+        //querySelectorAll
+        // var allItemsWithSelector = document.querySelectorAll("p.intro2");
+        // console.log(allItemsWithSelector[0]);
+
+
+        //getElementsByName
+        // var names = document.getElementsByName("customerName");
+        // alert(names[0].value);
+
+
+        //addEventListener - removeEventListener
+        // document.getElementById("tryIt").addEventListener("click",changeColor);
+        // function changeColor(){
+        //     document.getElementById("intro1").style.color="blue";
+        // }
+
+        // document.getElementById("tryIt").removeEventListener("click",changeColor);
+    </script>
+</body>
+</html>

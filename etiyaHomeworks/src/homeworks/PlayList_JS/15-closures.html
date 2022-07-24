@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input value="Add" type="button" onclick="alert(add())">
+    <input valur="someOther" type="button">
+    
+
+    <script>
+        var add = (function add(){    //closures!
+            var counter = 0;
+            return function(){
+                return counter +=1;
+            }
+        })();
+
+        var counter2 = 0;
+        function add2(){
+            counter2 +=1;
+            return counter2;
+        }
+
+        function someOtherFunction(){
+            counter += 30;  
+        }
+
+    </script>
+</body>
+</html>
