@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const message = ["my","name","is","Sacettin"];
+        // let result="";
+        // for (let x of message) {
+        //     result += x +" ";
+        // }
+        // console.log(result);
+        console.log(...message); //spread operatoru
+
+        //-----------------------------------------------------------
+
+        const array1 = ["one","two"];
+        const array2 = ["three","four"];
+        //const array3 = [array1,array2];
+        const array3 = [...array1, ...array2 , "five", "six"];
+
+        console.log(array3);
+
+        //------------------------------------------------------------
+
+        const number1 = [1,2,3];
+        //const number2 = number1; //copy with referance
+        const number2 = [...number1]; //value copy
+        number1[0] = 10;
+        console.log(number1,number2);
+
+        //------------------------------------------------------------
+
+        const user = {
+            username: "Sacettin ŞAHİN",
+            email:"info@gmail.com",
+        }
+        const adress = {
+            username: "abc", //last username is works.
+            city:"İzmir"
+        }
+        console.log({...user,...adress});
+
+        //------------------------------------------------------------
+
+        //rest parameters
+
+        function sum(a,b,c){
+            return a + b + c;
+        }
+
+        function sumRest(...args){
+            let result = 0;
+            for (let number of args) {
+                result += number
+            }
+            
+            return result;
+        }
+
+        let restParameters = sumRest(1,7,15,26);
+        console.log(restParameters);
+
+        //------------------------------------------------------------
+
+        function showInfo (name,surname, ...adress){
+            console.log(name,surname,adress);
+        }
+
+        showInfo("Sacettin", "Şahin", "İzmir", "Karşıyaka");
+
+
+    </script>
+</body>
+</html>

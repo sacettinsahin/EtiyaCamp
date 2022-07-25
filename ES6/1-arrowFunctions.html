@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //ES5
+        function hello(){
+            console.log("Hello");
+        }
+        var hello2 = function(){
+            console.log("Hello2");
+        }
+        hello();
+        hello2();
+
+        //ES6 - arrow function
+        //const helloES6 = () => console.log("Hello-ES6");
+        const helloES6 = () => { console.log("Hello-ES6")};
+
+        
+        const helloWithName = (name) => { console.log("Hello " + name);}
+
+
+        helloES6();
+        helloWithName("Sacettin");
+
+        //ES5
+        var sumES5 = function(a,b){
+            return a+b;
+        }
+        var result1 = sumES5(10,20);
+        console.log(result1);
+
+        //ES6
+        //const sumES6 = (a,b) => a+b;
+        const sumES6 = (a,b) => { return a+b };
+        var result2 = sumES6(20,30);
+        console.log(result2);
+       
+
+    </script>
+</body>
+</html>
