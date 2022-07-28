@@ -1,0 +1,27 @@
+.row{
+    display: flex;
+    margin: 50px 0;
+}
+.col{
+    width: 50%;
+}
+.col-l{
+    max-width: 700px;
+    display: flex;
+    justify-content: flex-end;
+}
+.col-l img{
+    max-width: 500px;
+}
+.col-r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    margin-left: 2%;
+}
+.col-r .content{
+    width: 60%;
+    color: #36414D;
+}

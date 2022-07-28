@@ -1,0 +1,17 @@
+.footer{
+    margin-top: 10px;
+    background-color: #134361;
+    display: flex;
+    justify-content: center; 
+}
+.footer ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 50px;
+    padding: 50px;
+}
+.footer ul li a{
+    color: rgba(226, 225, 225, 0.836);
+    text-decoration: none;
+    text-align: center;
+} 

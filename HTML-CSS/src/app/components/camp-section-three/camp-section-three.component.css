@@ -1,0 +1,24 @@
+.wrapper{
+    width: 80%;
+    margin: 50px auto;
+    
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.col-3{
+    width: 30%;
+}
+.col-3 img{
+    width: 100%;
+}
+.col-3 h2{
+    color:#36414D;
+}
+p{
+    color: #36414D;
+    font-size: 16px;
+    line-height: 20px;
+}

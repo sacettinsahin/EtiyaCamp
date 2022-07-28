@@ -1,0 +1,31 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: #134361;
+}
+.navbar .brand{
+    display: flex;
+    align-items: center;
+}
+.navbar .brand a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;  
+    text-align: center;
+}
+.navbar ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+
+}
+

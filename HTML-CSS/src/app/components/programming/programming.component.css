@@ -1,0 +1,24 @@
+.container{
+    background: #fafafa;
+}
+.wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 100px;
+    
+}
+.wrapper-item{
+    width: 33%;
+}
+@media (max-width=882px) {
+    .wrapper-item{
+        width: 80%;
+        margin: auto;
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+}
