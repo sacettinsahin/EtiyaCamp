@@ -1,0 +1,12 @@
+<div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Ürün adı: {{product.name}}</h5>
+      <p class="card-text"> Ürün Kodu: {{product.id}}</p>
+      <p class="card-text"> Fiyat: {{product.unitPrice}}</p>
+      <p class="card-text"> Stokta: {{product.unitsInStock}} adet var.</p>
+      <p class="card-text"> Fiyat: {{product.unitPrice}}</p>
+      
+
+      <button (click)="addToCartEvent()" class="btn btn-primary">Sepete Ekle</button>
+    </div>
+  </div>
