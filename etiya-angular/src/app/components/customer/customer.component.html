@@ -1,0 +1,38 @@
+<a routerLink="/dashboard" class="btn btn-dark mb-5">Back Down</a>
+
+<table class="table table-stripped table-striped p-5 table-lg">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Customer ID</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Contact Title</th>
+      <th scope="col">Street</th>
+      <th scope="col">City</th>
+      <th scope="col">Region</th>
+      <th scope="col">Postal Code</th>
+      <th scope="col">Country</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Customer Key</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="text-center" *ngFor="let x of customerList">
+      <th scope="row">{{x.id}}</th>
+      <td>{{x.contactName}}</td>
+      <td>{{x.companyName}}</td>
+      <td>{{x.contactTitle}}</td>
+      <td>{{x.street}}</td>
+      <td>{{x.city}}</td>
+      <td>{{x.region}}</td>
+      <td>{{x.postalCode}}</td>
+      <td>{{x.country}}</td>
+      <td>{{x.phone}}</td>
+      <td>{{x.customerKey}}</td>
+      <td><button routerLink="/dashboard/customer" (click)="deleteCustomer(x.id)" class="btn btn-danger">Delete</button></td>
+      <td><button routerLink="/customer-detail/{{x.id}}"  (click)="selectedCustomerId(x)"  class="btn btn-success">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
