@@ -1,0 +1,41 @@
+<button routerLink="/dashboard/product/add" type="button" class="btn btn-success mb-5">Add Product</button>
+
+<table  class="table table-striped table-hover">
+    <thead>
+      <tr >
+        
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Supplier ID</th>
+        <th scope="col">Category ID </th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity PerUnit</th>
+        
+        <th scope="col">Unit In Stock</th>
+        <th scope="col">Units Order</th>
+        <th scope="col">Reorder Level</th>
+        <th scope="col">Discontinued</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productList">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.supplierId}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.unitPrice}}</td>
+        <td>{{product.quantityPerUnit}}</td>
+        
+        <td>{{product.unitsInStock}}</td>
+        <td>{{product.unitsOnOrder}}</td>
+        <td>{{product.reorderLevel}}</td>
+        <td>{{product.discontinued}}</td>
+        
+        
+        <td><button (click)="deleteProduct(product.id)" type="button"  class="btn btn-danger">Delete</button></td>
+        <td><button (click)="selectedProductId(product)" type="button" class="btn btn-success">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+

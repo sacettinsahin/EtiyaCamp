@@ -2,6 +2,7 @@ import { Customer } from 'src/app/models/customer';
 import { Component, OnInit } from '@angular/core';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   customerList!:Customer[];
 
-  constructor(private customersService:CustomersService, private router:Router) { }
+  constructor(private customersService:CustomersService, private router:Router, private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.getCustomers()
@@ -30,7 +31,9 @@ export class DashboardComponent implements OnInit {
           this.getCustomers();
         }, 1000);
       })
-    } 
+    }
+    this.toastr.success("Customer deleted!!!","Delete")
+
   }
 
   selectedCustomerId(selectedCustomer: Customer):void{

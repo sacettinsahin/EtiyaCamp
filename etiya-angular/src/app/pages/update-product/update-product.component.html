@@ -1,0 +1,56 @@
+
+<button routerLink="/dashboard/product" class="btn btn-primary mb-5">Back Down</button>
+
+<form [formGroup]="productForm" (ngSubmit)="save()">
+    <div class="mb-3">
+        <label for="companyName" class="form-label">Id</label>
+        <input type="text" class="form-control" id="companyName" placeholder="" formControlName="id">
+    </div>
+    <div class="mb-3">
+        <label for="companyName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="companyName" placeholder="" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+        <label for="contactName" class="form-label">Supplier ID</label>
+        <input type="text" class="form-control" id="contactName" placeholder="" formControlName="supplierId">
+    </div>
+
+    <div class="mb-3">
+        <label for="contactTitle" class="form-label">Category ID</label>
+        <input type="text" class="form-control" id="contactTitle" placeholder="" formControlName="categoryId">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="street" class="form-label">Quantity Per Unit</label>
+        <input type="text" class="form-control" id="street" placeholder="" formControlName="quantityPerUnit">
+    </div>
+
+    <div class="mb-3">
+        <label for="city" class="form-label">Unit Price</label>
+        <input type="text" class="form-control" id="city" placeholder="" formControlName="unitPrice">
+    </div>
+
+    <div class="mb-3">
+        <label for="region" class="form-label">Unit In Stock</label>
+        <input type="text" class="form-control" id="region" placeholder="" formControlName="unitsInStock">
+    </div>
+
+    <div class="mb-3">
+        <label for="postalCode" class="form-label">Units On Order</label>
+        <input type="number" class="form-control" id="postalCode" placeholder="" formControlName="unitsOnOrder">
+    </div>
+
+    <div class="mb-3">
+        <label for="country" class="form-label">Reorder Level</label>
+        <input type="text" class="form-control" id="country" placeholder="" formControlName="reorderLevel">
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Discounted</label>
+        <input type="number" class="form-control" id="phone" placeholder="" formControlName="discontinued">
+    </div>
+
+    <div class="mb-3"><button  class="btn btn-dark">Save</button></div>
+</form>

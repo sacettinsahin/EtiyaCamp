@@ -17,6 +17,11 @@ import { UpdateCustomerComponent } from './pages/update-customer/update-customer
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { KdvPipe } from './pipes/kdv/kdv.pipe';
+import { SaleDirective } from './directives/sale/sale.directive';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { ProductRegisterComponent } from './pages/product-register/product-register.component';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { ToastrModule } from 'ngx-toastr';
     CategoryListComponent,
     RegisterComponent,
     DashboardComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    KdvPipe,
+    SaleDirective,
+    ProductDashboardComponent,
+    ProductRegisterComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
