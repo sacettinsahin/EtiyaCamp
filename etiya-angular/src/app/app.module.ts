@@ -13,8 +13,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
+import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,15 +29,17 @@ import { CustomerDetailComponent } from './pages/customer-detail/customer-detail
     CategoryListComponent,
     RegisterComponent,
     DashboardComponent,
-    CustomerComponent,
-    CustomerDetailComponent
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

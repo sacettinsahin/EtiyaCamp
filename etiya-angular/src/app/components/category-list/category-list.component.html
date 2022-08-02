@@ -1,9 +1,9 @@
-<p style="visibility: hidden;">fsdfsddf</p>
-
-<ng-template [ngIf]="categoryList";  [ngIfElse]="loading">
+<p>SideBar</p>
+<ng-template [ngIf]="categoryList" [ngIfElse]="loading">
   <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-      Category
+    <button type="button" class="list-group-item list-group-item-action active" style="background-color: black;"
+      aria-current="true">
+      Categories
     </button>
     <div class="list-group" *ngFor="let ct of categoryList">
       <button type="button" (click)="getCategoryById(ct)"
@@ -11,6 +11,7 @@
     </div>
   </div>
 </ng-template>
+
 <ng-template #loading>
   <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Customer } from 'src/app/models/customer';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 
@@ -9,78 +9,49 @@ import { CustomersService } from 'src/app/services/customers/customers.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   registerForm!: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private customerService:CustomersService) { } //FormBuilder servisiyle metodlarımızı oluşturacağız.
+  //companyName = new FormControl('',Validators.required);
+
+  constructor(private formBuilder:FormBuilder, private customerServices:CustomersService) { }
 
   ngOnInit(): void {
     this.createRegisterForm();
   }
 
-  createRegisterForm(){
-    this.registerForm = this.formBuilder.group(
-      {
-        companyName: ['', //default değer
-          [Validators.required, Validators.minLength(2)] //bu alan gerekli (doğrulama)
+  createRegisterForm(): void{
+    this.registerForm = this.formBuilder.group({
+      companyName: [ '', [Validators.required,Validators.minLength(2)]],
+      contactName: ['',[Validators.required,Validators.minLength(2)]],
+      contactTitle: ['',[Validators.required,Validators.minLength(2)]],
+      street: ['',Validators.required],
+      city: ['',Validators.required],
+      region: ['',Validators.required],
+      postalCode: ['',Validators.required],
+      country: ['',Validators.required],
+      phone: ['',Validators.required],
+      customerKey: ['',[Validators.required,Validators.minLength(2)]],
 
-        ],
-        contactName: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        contactTitle: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        street: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        city: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        region: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        postalCode: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        country: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        phone: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-        customerKey: ['', 
-          [Validators.required, Validators.minLength(2)] 
-
-        ],
-      }
-    )
+    })
+    
+    // this.registerForm = new FormGroup({
+    //   companyName : this.companyName
+    // })
   }
 
-  register(): void{
-    if(this.registerForm.invalid){
-      console.warn("Gerekli alanları doldurunuz.");
+  register(){
+    if (this.registerForm.invalid) {
+      console.warn("Gerekli alanları doldurunuz")
       return;
     }
-    else{
-      const customer:Customer = {
-        ...this.registerForm.value,
-        city: this.registerForm.value.city.toUpperCase(),
-      }
-      
-      this.customerService.add(customer).subscribe(response => {
-        console.log(response);
-      
-      alert("Customer added.");
-      })
+
+    const customer:Customer = {
+      ...this.registerForm.value,
     }
+
+    this.customerServices.add(customer).subscribe(response =>{
+      console.info(response)
+    })
   }
+
 }
