@@ -1,0 +1,20 @@
+{
+  "name": "northwind-json-server",
+  "version": "1.0.0",
+  "description": "Json Server API for Northwind Database",
+  "author": "ahmet-cetinkaya <ahmetcetinkaya7@outlook.com>",
+  "license": "MIT",
+  "keywords": [
+    "northwind",
+    "json",
+    "server",
+    "api"
+  ],
+  "scripts": {
+    "start": "json-server --watch src/data/db.json "
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {}
+}
