@@ -1,38 +1,12 @@
-<div class="card m-2" style="width: 18rem;height: 33rem;">
-    <img src="./assets/img/food.png">
-    <div 
-    [ngClass]="{
-      'card-body': isCard
-    }"
-    >
+<div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <img class="card-img-top mb-5" src="https://www.realmofhistory.com/wp-content/uploads/2018/03/10-mythical-dragon-entities-facts_11.jpg" alt="">
+      <h5 class="card-title">Ürün adı: {{product.name}}</h5>
+      <p class="card-text"> Ürün Kodu: {{product.id}}</p>
+      <p class="card-text"> Fiyat: {{product.unitPrice}} TL</p>
+      <p class="card-text"> Stokta: {{product.unitsInStock}} adet var.</p>
+      
 
-      <h5 class="card-title" >{{product.name | uppercase}}</h5>
-
-      <p  class="card-text" > <!--appOnSale ile directivesi p classına inputladım. Sonra                onSaleColor ile kullanmış oldum.  --> 
-        {{product.unitPrice | kdv:0.18 | currency: '₺'}}
-      </p>
-        
-        <p>Stock: {{product.unitsInStock}}</p>
-
-        <p>Quantity Per Unit: {{product.quantityPerUnit}}</p>    
-
-      <button (click)="addToCartEvent()" class="btn btn-dark">Add To Cart</button>
+      <button (click)="addToCartEvent()" class="btn btn-primary">Sepete Ekle</button>
     </div>
   </div>
-  
-<!-- 
-  KULLANILAN PİPE LAR: 
-    uppercase,
-    lowercase,
-    currency  
-    currency : 'altgr + t' sonuc tl,
-    percent,
-    json,
-    .
-    .
-    .
--->
-<!-- 
-  KULLANILAN DIRECTIVES: 
-
--->

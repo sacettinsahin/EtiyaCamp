@@ -13,15 +13,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
+import { CustomerComponent } from './components/customer/customer.component';
+import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { KdvPipe } from './pipes/kdv/kdv.pipe';
-import { SaleDirective } from './directives/sale/sale.directive';
-import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
-import { ProductRegisterComponent } from './pages/product-register/product-register.component';
-import { UpdateProductComponent } from './pages/update-product/update-product.component';
+import { ToastrComponentlessModule, ToastrModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -34,12 +32,8 @@ import { UpdateProductComponent } from './pages/update-product/update-product.co
     CategoryListComponent,
     RegisterComponent,
     DashboardComponent,
-    UpdateCustomerComponent,
-    KdvPipe,
-    SaleDirective,
-    ProductDashboardComponent,
-    ProductRegisterComponent,
-    UpdateProductComponent
+    CustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +43,7 @@ import { UpdateProductComponent } from './pages/update-product/update-product.co
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot()
+    ToastrComponentlessModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

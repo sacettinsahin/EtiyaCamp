@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Product from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products/products.service';
@@ -10,7 +9,6 @@ import { ProductsService } from 'src/app/services/products/products.service';
 })
 export class ProductListComponent implements OnInit {
 
-//isProduct:boolean = false;
 productList!:Product[];
 cartItems: any[] =[];
 //productList! :any[]
@@ -29,7 +27,6 @@ cartItems: any[] =[];
   getProducts(){
     this.productService.getList().subscribe((response) =>{
       this.productList = response;  
-      //if(this.productList.length>0) this.isProduct = true; html alanında length ile yaptık
     })
   }
 
@@ -37,9 +34,6 @@ cartItems: any[] =[];
     let itemToFind = this.cartItems.find((c)=> c == product.name);
     if (!itemToFind) {
       this.cartItems.push(product.name)
-    }
-    else{
-      console.log("Ürün zaten ekli!!")
     }
   }
 
