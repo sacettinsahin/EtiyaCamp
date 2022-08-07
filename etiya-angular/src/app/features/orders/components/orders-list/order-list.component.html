@@ -1,0 +1,48 @@
+<table  class="table table-light table-hover">
+    <thead>
+      <tr >
+        <th scope="col">Welcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *appWelcome="2000; else showWelcomeList">
+        <td colspan="8">Welcome</td>
+      </tr>
+      <ng-template #showWelcomeList>
+        <tr *appMultiple="5">
+          <td colspan="8">Welcome</td>
+        </tr>
+      </ng-template>
+    </tbody>
+</table>
+
+<table  class="table table-light table-hover">
+    <thead>
+      <tr >
+        <th scope="col">Id</th>
+        <th scope="col">Ship Name</th>
+        <th scope="col">Customer Key</th>
+        <th scope="col">Ship Street</th>
+        <th scope="col">Ship City</th>
+        <th scope="col">Ship Region</th>
+        <th scope="col">Ship Country</th>
+        <th scope="col">Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *appWelcome="2000; else showList">
+        <td colspan="8">Welcome</td>
+      </tr>
+      <ng-template #showList>
+        <tr *ngFor="let order of orderList;">
+          <th scope="row">{{order.id}}</th>
+          <td>{{order.shipName | uppercase}}</td>
+          <td>{{order.customerKey}}</td>
+          <td>{{order.shipStreet}}</td>
+          <td>{{order.shipCity}}</td>
+          <td>{{order.shipRegion }}</td>
+          <td>{{order.shipCountry}}</td>
+          <td>{{order.orderDate  }}</td>
+        </tr>
+      </ng-template>
+    </tbody>

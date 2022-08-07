@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-4">
+    <div class="card" style="width: 18rem;" appClickProductCard >
+      <img src="./assets/rose.jpg">
+      <div [ngClass]="{'card-body':isCard}">
+        <h5 class="card-title">{{product.name | uppercase}}</h5>
+
+        <p class="card-text" appOnSale [onSaleColor]="onMouseColor" [onSaleText]="onSaleText"
+          [isOnSale]="product.unitPrice > 20">
+
+          {{product.unitPrice | kdv:0.18 | currency}} </p>
+
+        <p>Stock: {{product.unitsInStock}}</p>
+        <p>Quantity Per Unit: {{product.quantityPerUnit}}</p>
+        <button (click)="addToCartEvent()" class="btn btn-dark">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

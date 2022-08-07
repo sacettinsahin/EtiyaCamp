@@ -1,0 +1,16 @@
+<ng-template [ngIf]="categories" [ngIfElse]="loading">
+  <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active" style="background-color: black;"
+          aria-current="true">
+          Categories
+      </button>
+      <button type="button" class="list-group-item list-group-item-action" *ngFor="let category of categories"
+          (click)="getCategoryById(category)">{{category.name}}</button>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
+</ng-template>
