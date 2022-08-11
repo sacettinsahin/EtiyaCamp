@@ -1,5 +1,7 @@
 <button routerLink="/dashboard/product/add" type="button" class="btn btn-success mb-5">Add Product</button>
 
+<input type="text" class="form-control mb-3" [(ngModel)]="filterText">
+
 <table  class="table table-striped table-hover">
     <thead>
       <tr >
@@ -19,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of productList">
+      <tr *ngFor="let product of productList | filterPipe: filterText">
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>{{product.supplierId}}</td>

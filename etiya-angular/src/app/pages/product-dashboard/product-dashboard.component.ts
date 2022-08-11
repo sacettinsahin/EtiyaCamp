@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import Product from 'src/app/models/product';
+
+
 import { ProductsService } from 'src/app/services/products/products.service';
 
 @Component({
@@ -10,7 +12,10 @@ import { ProductsService } from 'src/app/services/products/products.service';
   styleUrls: ['./product-dashboard.component.css']
 })
 export class ProductDashboardComponent implements OnInit {
+
   productList!: Product[];
+  filterText:string = "";
+
   constructor(private productsService:ProductsService, private router:Router, private toastr:ToastrService, ) { }
 
   ngOnInit(): void {
@@ -23,7 +28,7 @@ export class ProductDashboardComponent implements OnInit {
     })
   }
 
-  deleteProduct(id:number){
+  deleteProduct(id:number){ 
     if(confirm("Are you sure want to delete?")){
       this.productsService.delete(id).subscribe(()=>{
         setTimeout(() => {

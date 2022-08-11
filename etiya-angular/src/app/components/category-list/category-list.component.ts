@@ -15,12 +15,12 @@ export class CategoryListComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.getCategories();
-    }, 500);
+    }, 1000);
     
   }
 
   getCategories(){
-    this.categoriesService.getCategoryList().subscribe((response) =>{
+    this.categoriesService.getList().subscribe((response) =>{
       this.categoryList = response;
     })
   }

@@ -23,7 +23,7 @@ export class UpdateProductComponent implements OnInit {
   createProductForm(): void{
 
     this.productForm = this.formBuilder.group({
-      id: [ this.product.id,],
+      id: [ this.product.id,Validators.required],
       supplierId: [ this.product.supplierId, [Validators.required]],
       categoryId: [this.product.categoryId,[Validators.required]],
       quantityPerUnit: [this.product.quantityPerUnit,[Validators.required,Validators.minLength(2)]],

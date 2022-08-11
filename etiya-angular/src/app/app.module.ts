@@ -13,11 +13,18 @@ import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
+import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrComponentlessModule, ToastrModule } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+import { KdvPipe } from './pipes/kdv/kdv.pipe';
+import { SaleDirective } from './directives/sale/sale.directive';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { ProductRegisterComponent } from './pages/product-register/product-register.component';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
+import { FilterPipe } from './pipes/filter/filter.pipe';
+import { ClickProductsDirective } from './directives/click-products/click-products.directive';
+
 
 
 
@@ -32,8 +39,15 @@ import { ToastrComponentlessModule, ToastrModule } from 'ngx-toastr';
     CategoryListComponent,
     RegisterComponent,
     DashboardComponent,
-    CustomerComponent,
-    CustomerDetailComponent
+    UpdateCustomerComponent,
+    KdvPipe,
+    SaleDirective,
+    ProductDashboardComponent,
+    ProductRegisterComponent,
+    UpdateProductComponent,
+    FilterPipe,
+    ClickProductsDirective,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +57,7 @@ import { ToastrComponentlessModule, ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrComponentlessModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

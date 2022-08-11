@@ -1,12 +1,46 @@
-<div class="card m-2" style="width: 18rem;">
-    <div class="card-body">
-      <img class="card-img-top mb-5" src="https://www.realmofhistory.com/wp-content/uploads/2018/03/10-mythical-dragon-entities-facts_11.jpg" alt="">
-      <h5 class="card-title">Ürün adı: {{product.name}}</h5>
-      <p class="card-text"> Ürün Kodu: {{product.id}}</p>
-      <p class="card-text"> Fiyat: {{product.unitPrice}} TL</p>
-      <p class="card-text"> Stokta: {{product.unitsInStock}} adet var.</p>
-      
+<div class="card m-2" style="width: 18rem;height: 33rem;" appClickProducts>
+    <img src="./assets/img/food.png">
+    <div 
+    [ngClass]="{
+      'card-body': isCard
+    }"
+    >
 
-      <button (click)="addToCartEvent()" class="btn btn-primary">Sepete Ekle</button>
+      <h5 class="card-title" >{{product.name | uppercase}}</h5>
+
+      <h6>Quantity Per Unit: {{product.quantityPerUnit}}</h6>   
+
+      <p 
+    class="card-text" 
+    appOnSale
+    [onSaleColor]="onMouseColor"
+    [onSaleText]="onSaleText"
+    [isOnSale]="product.unitPrice > 30"
+    >
+      {{ product.unitPrice | kdv: 0.8 | currency: "₺" }}
+    </p>
+        
+        <p>Stock: {{product.unitsInStock}}</p>
+
+         
+
+      <button (click)="addToCardEvent(product)" class="btn btn-dark">Add To Cart</button>
     </div>
   </div>
+  
+<!-- 
+  KULLANILAN PİPE LAR: 
+    uppercase,
+    lowercase,
+    currency  
+    currency : 'altgr + t' sonuc tl,
+    percent,
+    json,
+    .
+    .
+    .
+-->
+<!-- 
+  KULLANILAN DIRECTIVES: 
+
+-->
