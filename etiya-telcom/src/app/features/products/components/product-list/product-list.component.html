@@ -1,0 +1,22 @@
+<button routerLink="/product/add" class="btn btn-success mt-5 mb-3">Add Service</button>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productList">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td><button  routerLink="/product/{{product.id}}"  class="btn btn-success">Update</button></td>
+        <td><button (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
