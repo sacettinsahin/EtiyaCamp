@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,13 +13,17 @@ import { CustomersService } from 'src/app/services/customers/customers.service';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
+
   //companyName = new FormControl('',Validators.required);
 
   constructor(private formBuilder:FormBuilder, private customerServices:CustomersService, private toastr:ToastrService) { }
 
+
   ngOnInit(): void {
     this.createRegisterForm();
+
   }
+
 
   createRegisterForm(): void{
     this.registerForm = this.formBuilder.group({
@@ -51,6 +56,7 @@ export class RegisterComponent implements OnInit {
     }
     this.toastr.success("Customer succesfully add!","Add");
     this.customerServices.add(customer).subscribe(response =>{
+
       console.info(response)
     })
   }

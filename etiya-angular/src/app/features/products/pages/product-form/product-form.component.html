@@ -1,0 +1,59 @@
+<form *ngIf="productForm" [formGroup]="productForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="" formControlName="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="categoryId" class="form-label">Category</label>
+
+    <select class="form-select" formControlName="categoryId">
+      <option *ngFor="let category of categoryList" value="{{ category.id }}">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="supplierId" class="form-label">Supplier</label>
+
+    <select class="form-select" formControlName="supplierId">
+      <option *ngFor="let supplier of supplierList" value="{{ supplier.id }}">
+        {{ supplier.companyName }}
+      </option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="quantityPerUnit" class="form-label">Quantity Per Unit</label>
+    <input type="text" class="form-control" id="quantityPerUnit" placeholder="" formControlName="quantityPerUnit">
+  </div>
+
+
+  <div class="mb-3">
+    <label for="unitPrice" class="form-label">Unit Price</label>
+    <input type="text" class="form-control" id="unitPrice" placeholder="" formControlName="unitPrice">
+  </div>
+
+  <div class="mb-3">
+    <label for="unitsInStock" class="form-label">Units In Stock</label>
+    <input type="text" class="form-control" id="unitsInStock" placeholder="" formControlName="unitsInStock">
+  </div>
+
+  <div class="mb-3">
+    <label for="unitsOnOrder" class="form-label">Units On Order</label>
+    <input type="text" class="form-control" id="unitsOnOrder" placeholder="" formControlName="unitsOnOrder">
+  </div>
+
+  <div class="mb-3">
+    <label for="reorderLevel" class="form-label">Reorder Level</label>
+    <input type="text" class="form-control" id="reorderLevel" placeholder="" formControlName="reorderLevel">
+  </div>
+
+  <div class="mb-3">
+    <label for="discontinued" class="form-label">Discontinued</label>
+    <input type="text" class="form-control" id="discontinued" placeholder="" formControlName="discontinued">
+  </div>
+
+  <div class="mb-3"><button type="submit" class="btn btn-dark" (click)="save()">Save</button></div>
+</form>

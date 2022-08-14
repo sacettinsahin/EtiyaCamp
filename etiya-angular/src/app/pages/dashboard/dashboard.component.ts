@@ -1,8 +1,10 @@
 import { Customer } from 'src/app/models/customer';
 import { Component, OnInit } from '@angular/core';
+
 import { CustomersService } from 'src/app/services/customers/customers.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
   customerList!:Customer[];
 
   constructor(private customersService:CustomersService, private router:Router, private toastr:ToastrService) { }
@@ -39,5 +42,6 @@ export class DashboardComponent implements OnInit {
   selectedCustomerId(selectedCustomer: Customer):void{
     this.router.navigateByUrl(`dashboard/customer/${selectedCustomer.id}`);
  }
+
 
 }
