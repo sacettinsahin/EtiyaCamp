@@ -1,0 +1,76 @@
+
+  <app-dashboard-layout *ngIf="fetchStatus == 'loaded'">
+    <button routerLink="/product/add" class="btn btn-success mt-5 mb-3">
+      Add Service
+    </button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList | pagination: currentPage ">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>
+            <button
+              routerLink="/product/{{ product.id }}"
+              class="btn btn-success"
+            >
+              Update
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteProduct(product.id)" class="btn btn-danger">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    {{productList.length}} adet ürün var. <br> 
+  
+  
+    Sayfa Numarası: {{pageNumber}} <br>
+  
+  
+    Current Page: {{currentPage}} <br><br>
+  
+  
+    <nav class="pagenav">
+      <ul class="pagination">
+        <li 
+        *ngIf="currentPage > 0"
+        (click)="back()" class="page-item page-item-button"><a class="page-link" href="#">Back</a></li>
+        
+        <ng-container *ngFor="let index of pageNumber | enumerate ">
+          <li class="page-item"   (click)="currentPage = index" ><a [ngClass]="{'active' : index==currentPage}" class="page-link" href="#">{{index+1}}</a></li>
+        </ng-container>
+        
+  
+        <li 
+        *ngIf="currentPage < pageNumber-1"
+        (click)="next()" class="page-item page-item-button"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  
+    <br><br><br>
+  
+  </app-dashboard-layout>
+  
+  <app-dashboard-layout *ngIf="fetchStatus == 'pending'">
+    <app-list-skeleton></app-list-skeleton>
+  </app-dashboard-layout>
+  
+  <app-dashboard-layout *ngIf="fetchStatus == 'error'">
+    <div class="col-12">
+      <div class="alert alert-danger text-center">
+        Error
+      </div>
+    </div>
+  </app-dashboard-layout>

@@ -1,0 +1,20 @@
+.pagenav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f78200;
+    border: #242441;
+}
+.pagenav .active{
+    background-color:  #242441;
+    color: #f78200!important;
+}
+
+
+.pagenav li a{
+    color: #242441;
+}
+.pagenav .page-item-button a{
+    color: #f78200!important;
+
+}
